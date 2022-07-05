@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Nama : Akbar Firman Syah
+    NIM : 203140914111071
+    Kelas : SI 3C -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Soal 1 UAS</title>
+</head>
+<body>
+    <div id="app">
+        <div class="box">
+            <h1>Catatan Harian</h1>
+            <input type="text" class="input input1" v-model="isi" @keyup.enter="tambah" placeholder="Ketik catatan, lalu tekan enter">
+            <input type="text" class="input input1" v-model="katakunci" placeholder="Search">
+            <div class="list" >Daftar catatan harian :</div>
+                <ul>
+                    <li v-for="(ct, index) in caricatatan">
+                        <input type="text" class="input input2" v-model="ct">
+                        <button class="btn" @click='edit(index)'>edit</button>
+                        <button class="btn" @click='hapus(index)'>hapus</button>
+                    </li>
+                </ul>
+                <button class="btn reset" @click='reset'>hapus semua catatan</button>
+        </div>
+    </div>
+    <script src="vue.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
